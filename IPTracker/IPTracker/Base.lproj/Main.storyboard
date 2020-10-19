@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="IPTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sHi-vZ-JIO">
+                                <rect key="frame" x="0.0" y="295.5" width="414" height="600.5"/>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Hsk-Ja-CJd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="295.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j70-hn-Jg4">
+                                <rect key="frame" x="32" y="116" width="350" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RB-hw-TJG">
+                                        <rect key="frame" x="0.0" y="0.0" width="16" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="jEm-f1-P0g"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="IP Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-Ub-F24">
+                                        <rect key="frame" x="16" y="0.0" width="270" height="64"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="8nO-Yv-3ZK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wei-K9-xMb">
+                                        <rect key="frame" x="286" y="0.0" width="64" height="64"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wei-K9-xMb" secondAttribute="height" multiplier="1:1" id="4p8-cP-dvS"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="submitTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cct-lV-aE2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-QG-egm">
+                                <rect key="frame" x="32" y="196" width="350" height="256"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="TKc-Dd-0NT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sHi-vZ-JIO" secondAttribute="trailing" id="7KW-L5-7Z1"/>
+                            <constraint firstItem="2Tl-QG-egm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGO-Ml-wqK"/>
+                            <constraint firstItem="2Tl-QG-egm" firstAttribute="width" secondItem="j70-hn-Jg4" secondAttribute="width" id="EzT-ci-bdJ"/>
+                            <constraint firstItem="sHi-vZ-JIO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="INb-WU-cr9"/>
+                            <constraint firstAttribute="bottom" secondItem="sHi-vZ-JIO" secondAttribute="bottom" id="Jez-G2-sne"/>
+                            <constraint firstItem="j70-hn-Jg4" firstAttribute="centerY" secondItem="Hsk-Ja-CJd" secondAttribute="centerY" id="KTL-Eh-9bQ"/>
+                            <constraint firstItem="Hsk-Ja-CJd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LCu-Ca-DcD"/>
+                            <constraint firstItem="Hsk-Ja-CJd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RQZ-ZJ-0fE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j70-hn-Jg4" secondAttribute="trailing" constant="32" id="YFN-re-YDz"/>
+                            <constraint firstItem="2Tl-QG-egm" firstAttribute="top" secondItem="j70-hn-Jg4" secondAttribute="bottom" constant="16" id="f16-WP-FUN"/>
+                            <constraint firstItem="sHi-vZ-JIO" firstAttribute="top" secondItem="Hsk-Ja-CJd" secondAttribute="bottom" id="i1f-Wv-YNx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hsk-Ja-CJd" secondAttribute="trailing" id="jPf-6w-DST"/>
+                            <constraint firstItem="j70-hn-Jg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="kw4-Sg-M3D"/>
+                            <constraint firstItem="Hsk-Ja-CJd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="ybv-nw-O5U"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ipView" destination="2Tl-QG-egm" id="Kgt-ne-3mh"/>
+                        <outlet property="mapView" destination="sHi-vZ-JIO" id="bmn-e9-RHp"/>
+                        <outlet property="spacerView" destination="1RB-hw-TJG" id="Gvd-U0-BHc"/>
+                        <outlet property="submitButton" destination="wei-K9-xMb" id="JvW-ey-5Fa"/>
+                        <outlet property="textField" destination="4pT-Ub-F24" id="p4u-v2-qKA"/>
+                        <outlet property="textFieldStack" destination="j70-hn-Jg4" id="JNh-9J-Dhu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="pattern-bg" width="1440" height="250"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
