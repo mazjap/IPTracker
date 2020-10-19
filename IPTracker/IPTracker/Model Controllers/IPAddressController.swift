@@ -30,7 +30,10 @@ class IPAddressController {
     
     func findLocationFromIP(ip: String, completion: @escaping (Result<IPResponseContainer, NetworkError>) -> Void) {
         var urlComponenets = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
-        urlComponenets?.queryItems = [URLQueryItem(name: "apiKey", value: IPIFY_API_KEY), URLQueryItem(name: "ipAddress", value: ip)]
+        urlComponenets?.queryItems =
+            // Create Ipify account and replace "IPIFY_API_KEY" with your own API key
+            [URLQueryItem(name: "apiKey", value: IPIFY_API_KEY),
+             URLQueryItem(name: "ipAddress", value: ip)]
         
         guard let url = urlComponenets?.url else {
             completion(.failure(.invalidInput))

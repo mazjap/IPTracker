@@ -14,8 +14,8 @@
 		0E80953A253DFE6E00DD79DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E809539253DFE6E00DD79DF /* Assets.xcassets */; };
 		0E80953D253DFE6E00DD79DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E80953B253DFE6E00DD79DF /* LaunchScreen.storyboard */; };
 		0E809547253E02A700DD79DF /* IPAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809546253E02A700DD79DF /* IPAddressController.swift */; };
-		0EBEA78A253E0BA7008CE2CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA789253E0BA7008CE2CF /* Constants.swift */; };
 		0EBEA78D253E1138008CE2CF /* IPResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */; };
+		0EBEA791253E2205008CE2CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA790253E2205008CE2CF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		0E80953C253DFE6E00DD79DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E80953E253DFE6E00DD79DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E809546253E02A700DD79DF /* IPAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressController.swift; sourceTree = "<group>"; };
-		0EBEA789253E0BA7008CE2CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPResponseContainer.swift; sourceTree = "<group>"; };
+		0EBEA790253E2205008CE2CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +62,58 @@
 		0E80952F253DFE6000DD79DF /* IPTracker */ = {
 			isa = PBXGroup;
 			children = (
-				0E809530253DFE6000DD79DF /* AppDelegate.swift */,
-				0E809532253DFE6000DD79DF /* SceneDelegate.swift */,
-				0E809534253DFE6000DD79DF /* MapViewController.swift */,
-				0E809546253E02A700DD79DF /* IPAddressController.swift */,
-				0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */,
-				0EBEA789253E0BA7008CE2CF /* Constants.swift */,
-				0E809536253DFE6000DD79DF /* Main.storyboard */,
-				0E809539253DFE6E00DD79DF /* Assets.xcassets */,
-				0E80953B253DFE6E00DD79DF /* LaunchScreen.storyboard */,
-				0E80953E253DFE6E00DD79DF /* Info.plist */,
+				0EBEA794253E222F008CE2CF /* Resources */,
+				0EBEA795253E2236008CE2CF /* ViewControllers */,
+				0EBEA796253E223E008CE2CF /* Model Controllers */,
+				0EBEA797253E2248008CE2CF /* Models */,
+				0EBEA798253E2255008CE2CF /* Storyboards */,
 			);
 			path = IPTracker;
+			sourceTree = "<group>";
+		};
+		0EBEA794253E222F008CE2CF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EBEA790253E2205008CE2CF /* Constants.swift */,
+				0E809530253DFE6000DD79DF /* AppDelegate.swift */,
+				0E809532253DFE6000DD79DF /* SceneDelegate.swift */,
+				0E809539253DFE6E00DD79DF /* Assets.xcassets */,
+				0E80953E253DFE6E00DD79DF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0EBEA795253E2236008CE2CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E809534253DFE6000DD79DF /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0EBEA796253E223E008CE2CF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E809546253E02A700DD79DF /* IPAddressController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		0EBEA797253E2248008CE2CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EBEA798253E2255008CE2CF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0E809536253DFE6000DD79DF /* Main.storyboard */,
+				0E80953B253DFE6E00DD79DF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,12 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EBEA78A253E0BA7008CE2CF /* Constants.swift in Sources */,
 				0E809535253DFE6000DD79DF /* MapViewController.swift in Sources */,
 				0EBEA78D253E1138008CE2CF /* IPResponseContainer.swift in Sources */,
 				0E809531253DFE6000DD79DF /* AppDelegate.swift in Sources */,
 				0E809533253DFE6000DD79DF /* SceneDelegate.swift in Sources */,
 				0E809547253E02A700DD79DF /* IPAddressController.swift in Sources */,
+				0EBEA791253E2205008CE2CF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HFR8F4BT7E;
-				INFOPLIST_FILE = IPTracker/Info.plist;
+				INFOPLIST_FILE = IPTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HFR8F4BT7E;
-				INFOPLIST_FILE = IPTracker/Info.plist;
+				INFOPLIST_FILE = IPTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

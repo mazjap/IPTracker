@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     
     var ipContainer: IPResponseContainer? = nil {
         didSet {
-            // TODO: - Set labels to represent ipContainer and update mapView
+            updateViews()
         }
     }
     
@@ -28,11 +28,34 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var ipView: UIView!
     
+    @IBOutlet private weak var ipAddressLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var ispLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textFieldStack.layer.cornerRadius = 8
         ipView.layer.cornerRadius = 8
+        
+        updateViews()
+    }
+    
+    private func updateViews() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let container = self.ipContainer {
+                self.ipAddressLabel.text = "\(container.ip)"
+                self.locationLabel.text = "\(container.location)"
+                self.ispLabel.text = container.isp
+                
+                self.mapView.setCenter(CLLocationCoordinate2D(latitude: container.location.latitude, longitude: container.location.longitude), animated: true)
+            } else {
+                self.ipAddressLabel.text = ""
+                self.locationLabel.text = ""
+                self.ispLabel.text = ""
+            }
+        }
     }
     
     @IBAction func submitTapped(_ sender: Any) {

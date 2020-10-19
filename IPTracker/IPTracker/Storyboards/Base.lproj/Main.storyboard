@@ -38,7 +38,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="8nO-Yv-3ZK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wei-K9-xMb">
@@ -57,9 +57,72 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-QG-egm">
                                 <rect key="frame" x="32" y="196" width="350" height="256"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mPv-5e-2n5">
+                                        <rect key="frame" x="16" y="8" width="318" height="240"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Q7Y-Dy-31p">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzp-JL-Z0M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ip_address_content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ja-Hb-pIM">
+                                                        <rect key="frame" x="0.0" y="24" width="318" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="N9z-x2-pSf">
+                                                <rect key="frame" x="0.0" y="78" width="318" height="64.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvH-WL-ZBI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="24.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location_content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qoq-Pj-kWg">
+                                                        <rect key="frame" x="0.0" y="24.5" width="318" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="DkO-PY-h4D">
+                                                <rect key="frame" x="0.0" y="156.5" width="318" height="83.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISP:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKM-Hp-xEE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="318" height="31.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="internet_pervice_provider_content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPd-aN-5mu">
+                                                        <rect key="frame" x="0.0" y="31.5" width="318" height="52"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="mPv-5e-2n5" firstAttribute="centerX" secondItem="2Tl-QG-egm" secondAttribute="centerX" id="10l-57-zfG"/>
+                                    <constraint firstItem="mPv-5e-2n5" firstAttribute="top" secondItem="2Tl-QG-egm" secondAttribute="top" constant="8" id="8Wd-es-lJG"/>
+                                    <constraint firstAttribute="trailing" secondItem="mPv-5e-2n5" secondAttribute="trailing" constant="16" id="CxA-u5-asX"/>
                                     <constraint firstAttribute="height" constant="256" id="TKc-Dd-0NT"/>
+                                    <constraint firstItem="mPv-5e-2n5" firstAttribute="leading" secondItem="2Tl-QG-egm" secondAttribute="leading" constant="16" id="U9C-0k-Ay4"/>
+                                    <constraint firstAttribute="bottom" secondItem="mPv-5e-2n5" secondAttribute="bottom" constant="8" id="zv4-J2-FyV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -83,7 +146,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ipAddressLabel" destination="5ja-Hb-pIM" id="rcG-94-XkA"/>
                         <outlet property="ipView" destination="2Tl-QG-egm" id="Kgt-ne-3mh"/>
+                        <outlet property="ispLabel" destination="tPd-aN-5mu" id="Xjz-Z7-fN6"/>
+                        <outlet property="locationLabel" destination="Qoq-Pj-kWg" id="8Ld-Wg-DCi"/>
                         <outlet property="mapView" destination="sHi-vZ-JIO" id="bmn-e9-RHp"/>
                         <outlet property="spacerView" destination="1RB-hw-TJG" id="Gvd-U0-BHc"/>
                         <outlet property="submitButton" destination="wei-K9-xMb" id="JvW-ey-5Fa"/>

@@ -11,6 +11,7 @@ struct IPResponseContainer: Decodable {
     enum CodingKeys: String, CodingKey {
         case ip
         case location
+        case isp
     }
     
     init(from decoder: Decoder) throws {
@@ -18,10 +19,12 @@ struct IPResponseContainer: Decodable {
         
         ip = try IP(container.decode(String.self, forKey: .ip))
         location = try container.decode(Location.self, forKey: .location)
+        isp = try container.decode(String.self, forKey: .isp)
     }
     
     let ip: IP
     let location: Location
+    let isp: String
 }
 
 struct IP: CustomStringConvertible {
@@ -49,16 +52,23 @@ struct IP: CustomStringConvertible {
     let val4: UInt8
 }
 
-struct Location: Decodable {
+struct Location: Decodable, CustomStringConvertible {
     enum CodingKeys: String, CodingKey {
         case country
+        case region
         case city
         case latitude = "lat"
         case longitude = "lng"
         case postalCode
     }
     
+    var description: String {
+        "\(city), \(region)\n" +
+        "\(country), \(postalCode)"
+    }
+    
     var country: String
+    var region: String
     var city: String
     var latitude: Double
     var longitude: Double
