@@ -20,6 +20,10 @@ struct IPResponseContainer: Decodable {
         ip = try IP(container.decode(String.self, forKey: .ip))
         location = try container.decode(Location.self, forKey: .location)
         isp = try container.decode(String.self, forKey: .isp)
+        
+        if isp.isEmpty && location.postalCode.isEmpty && location.city.isEmpty {
+            throw IPError.noData
+        }
     }
     
     let ip: IP
@@ -73,4 +77,10 @@ struct Location: Decodable, CustomStringConvertible {
     var latitude: Double
     var longitude: Double
     var postalCode: String
+}
+
+extension IPResponseContainer {
+    enum IPError: Error {
+        case noData
+    }
 }

@@ -11,9 +11,12 @@ class MapViewController: UIViewController {
     
     // MARK: - Variables
     
-    let ipController = IPAddressController()
+    private let cornerRadius: CGFloat = 20
     
-    var ipContainer: IPResponseContainer? = nil {
+    private var annotation: MKPointAnnotation?
+    
+    private let ipController = IPAddressController()
+    private var ipContainer: IPResponseContainer? = nil {
         didSet {
             updateViews()
         }
@@ -35,21 +38,41 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textFieldStack.layer.cornerRadius = 8
-        ipView.layer.cornerRadius = 8
-        
+        textField.delegate = self
         updateViews()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        submitButton.round(corners: [.topRight, .bottomRight], with: cornerRadius)
+        spacerView.round(corners: [.topLeft, .bottomLeft], with: cornerRadius)
+        
+        ipView.layer.cornerRadius = cornerRadius
     }
     
     private func updateViews() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            
             if let container = self.ipContainer {
                 self.ipAddressLabel.text = "\(container.ip)"
                 self.locationLabel.text = "\(container.location)"
                 self.ispLabel.text = container.isp
                 
-                self.mapView.setCenter(CLLocationCoordinate2D(latitude: container.location.latitude, longitude: container.location.longitude), animated: true)
+                
+                let location = CLLocationCoordinate2D(latitude: container.location.latitude, longitude: container.location.longitude)
+                let viewRegion = MKCoordinateRegion(center: location, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                
+                if let annotation = self.annotation {
+                    self.mapView.removeAnnotation(annotation)
+                }
+                
+                self.annotation = MKPointAnnotation()
+                self.annotation?.coordinate = location
+                self.annotation?.title = self.ipAddressLabel.text
+                
+                self.mapView.addAnnotation(self.annotation!)
+                self.mapView.setRegion(viewRegion, animated: true)
+                
             } else {
                 self.ipAddressLabel.text = ""
                 self.locationLabel.text = ""
@@ -58,7 +81,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func submitTapped(_ sender: Any) {
+    private func findIP() {
         guard let ip = textField.text, !ip.isEmpty,
               ip.rangeOfCharacter(from: NSCharacterSet.letters) == nil else { return }
         
@@ -71,8 +94,17 @@ class MapViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func submitTapped(_ sender: Any) {
+        view.endEditing(true)
+        findIP()
+    }
 }
 
 extension MapViewController: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        findIP()
+        return true
+    }
 }

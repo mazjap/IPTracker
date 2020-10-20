@@ -16,6 +16,7 @@
 		0E809547253E02A700DD79DF /* IPAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E809546253E02A700DD79DF /* IPAddressController.swift */; };
 		0EBEA78D253E1138008CE2CF /* IPResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */; };
 		0EBEA791253E2205008CE2CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA790253E2205008CE2CF /* Constants.swift */; };
+		0EBEA79B253E2DFF008CE2CF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBEA79A253E2DFF008CE2CF /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0E809546253E02A700DD79DF /* IPAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressController.swift; sourceTree = "<group>"; };
 		0EBEA78C253E1138008CE2CF /* IPResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPResponseContainer.swift; sourceTree = "<group>"; };
 		0EBEA790253E2205008CE2CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0EBEA79A253E2DFF008CE2CF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				0EBEA796253E223E008CE2CF /* Model Controllers */,
 				0EBEA797253E2248008CE2CF /* Models */,
 				0EBEA798253E2255008CE2CF /* Storyboards */,
+				0EBEA79A253E2DFF008CE2CF /* UIView+Extension.swift */,
 			);
 			path = IPTracker;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E809535253DFE6000DD79DF /* MapViewController.swift in Sources */,
+				0EBEA79B253E2DFF008CE2CF /* UIView+Extension.swift in Sources */,
 				0EBEA78D253E1138008CE2CF /* IPResponseContainer.swift in Sources */,
 				0E809531253DFE6000DD79DF /* AppDelegate.swift in Sources */,
 				0E809533253DFE6000DD79DF /* SceneDelegate.swift in Sources */,
